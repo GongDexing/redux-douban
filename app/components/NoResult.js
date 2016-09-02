@@ -1,4 +1,5 @@
 /*jshint esversion:6*/
+import '../less/NoResult.less'
 import React, {Component} from 'react';
 
 export default class NoResult extends Component{

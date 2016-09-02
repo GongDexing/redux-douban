@@ -1,0 +1,44 @@
+@headerHeight: 60px;
+#header{
+  -webkit-transition: opacity .5s;
+  transition: opacity .5s;
+  background: #fff;
+  border-bottom: 1px solid #eee;
+  height: @headerHeight;
+  margin-bottom: 24px;
+  padding: 0 4%;
+  width: 100%;
+}
+.clearfix {
+  zoom: 1;
+}
+#logo, #logo img {
+  height: @headerHeight;
+  line-height: @headerHeight;
+}
+#logo {
+  float: left;
+}
+#logo span {
+  float: right;
+  font-size: 20px;
+  font-weight: bold;
+  font-family: Raleway,Hiragino Sans GB,sans-serif;
+  height: @headerHeight;
+  line-height: @headerHeight;
+  text-transform: uppercase;
+}
+#search-box {
+  border-left: 1px solid #ebedee;
+  float: left;
+  height: 22px;
+  line-height: 22px;
+  padding-left: 30px;
+  margin: 18px auto 0;
+}
+.no-border {
+  border: 0px;
+  &:focus{
+    outline: none;
+  }
+}

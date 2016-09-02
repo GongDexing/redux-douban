@@ -1,14 +1,14 @@
 /*jshint esversion:6*/
-export function setTab(tag){
+export function currentTab(tag){
   return {
-    type: 'SET_TAB',
+    type: 'CURRENT_TAB',
     tag
   };
 }
 
-export function setQuery(query){
+export function currentQuery(query){
   return {
-    type: 'SET_QUERY',
+    type: 'CURRENT_QUERY',
     query
   };
 }

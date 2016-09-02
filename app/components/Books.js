@@ -1,31 +1,26 @@
 /*jshint esversion:6*/
+import '../less/Books.less';
 import React, { Component } from 'react';
+import { Row } from 'antd';
 import Book from './Book';
-import Spinner from '../components/Spinner';
+import Spinner from './Spinner';
 import NoResult from './NoResult';
+
 export default class Books extends Component{
   constructor(props){
     super(props);
   }
-  renderBooks(){
-    const { books, scroll, noResult } = this.props;
-    if( !scroll && noResult){
-      return (
-        <NoResult />
-      );
-    }else{
-      return books.map((book, index) =>
-        <Book key={index} book={book} />
-      );
-    }
-  }
+
   render(){
-    const { scroll } = this.props;
+    const { fetch, books } = this.props;
     return(
-      <div className='col-md-9 '>
-        {this.renderBooks()}
-        <Spinner status={scroll}/>
-      </div>
+        <div>
+          <Row>
+            {books.map((book, index) => <Book key={index} book={book}/>)}
+            <Spinner status={fetch}/>
+            {books.length === 0 && !fetch ? <NoResult /> : ''}
+          </Row>
+        </div>
     );
   }
 }

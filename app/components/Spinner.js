@@ -1,4 +1,5 @@
 /*jshint esversion:6*/
+import '../less/Spinner.less';
 import React, { Component } from 'react';
 
 export default class Spinner extends Component {

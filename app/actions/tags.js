@@ -1,30 +1,40 @@
-/*jshint esversion:6*/
-import { ADD_TAG, TOGGLE_TAG, DELETE_TAG, ACTIVE_TAG } from '../constant/status';
-
-export function addTag(tag, query){
+export function addTags(tags){
   return {
-    type: ADD_TAG,
-    tag
+    type: 'ADD_TAGS',
+    tags
   };
 }
-
-export function deleteTag(index){
+export function addTag(tag){
   return {
-    type: DELETE_TAG,
-    index
+    type: 'ADD_TAG',
+    tag
   };
 }
 
 export function toggleTag(index){
   return {
-    type: TOGGLE_TAG,
+    type: 'TOGGLE_TAG',
+    index
+  };
+}
+
+export function deleteTag(index){
+  return {
+    type: 'DELETE_TAG',
     index
   };
 }
 
 export function activeTag(index){
   return {
-    type: ACTIVE_TAG,
+    type: 'ACTIVE_TAG',
+    index
+  };
+}
+
+export function unactiveTag(index){
+  return {
+    type: 'UNACTIVE_TAG',
     index
   };
 }

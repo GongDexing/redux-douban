@@ -8,6 +8,7 @@ export default function wizard(state = WIZARD_TAGS, action){
         {
           tag: state[action.index].tag,
           isActive: !state[action.index].isActive,
+          img: state[action.index].img
         },
         ...state.slice(action.index + 1)
       ];

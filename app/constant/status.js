@@ -19,6 +19,7 @@ export const WIZARD_TAGS = [
   {tag: '教育', isActive: false},
   {tag: '经济学', isActive: false},
   {tag: '旅游', isActive: false},
+  {tag: '地理', isActive: false},
   {tag: '企业管理', isActive: false},
   {tag: '农业', isActive: false},
   {tag: '制造业', isActive: false},

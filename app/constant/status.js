@@ -7,6 +7,20 @@ export const ACTIVE_TAG = 'ACTIVE_TAG';
 export const TAG_SEARCH = '搜索结果';
 export const TAG_GUESS = '猜你喜欢';
 
+export const BOOK_KEY_MAP = [
+  {key: 'author', name: '作者', type: 'array'},
+  {key: 'translator', name: '译者', type: 'array'},
+  {key: 'publisher', name: '出版社', type: 'string'},
+  {key: 'pubdate', name: '出版日期', type: 'string'},
+  {key: 'pages', name: '页数', type: 'string'},
+  {key: 'isbn13', name: 'ISBN', type: 'string'},
+  {key: 'binding', name: '装帧', type: 'string'},
+  {key: 'price', name: '售价', type: 'string'},
+  {key: 'tags', name: '标签', type: 'array-json', field: 'name'},
+  {key: 'author_intro', name: '作者介绍', type: 'string'},
+  {key: 'origin_title', name: '原标题', type: 'string'}
+];
+
 export const WIZARD_TAGS = [
   {tag: '创业', isActive: false},
   {tag: '大数据', isActive: false},
@@ -23,6 +37,7 @@ export const WIZARD_TAGS = [
   {tag: '企业管理', isActive: false},
   {tag: '农业', isActive: false},
   {tag: '制造业', isActive: false},
+  {tag: '军事', isActive: false},
   {tag: '汽车', isActive: false},
   {tag: '商业', isActive: false},
   {tag: '设计', isActive: false},

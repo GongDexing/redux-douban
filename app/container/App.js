@@ -4,47 +4,46 @@ import '../less/App.less';
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
 import NavBar from '../components/NavBar';
-import Content from '../components/Content';
 import Wizard from '../components/Wizard';
+import BooksContainer from './BooksContainer';
+import BookContainer from './BookContainer';
+
 class App extends Component{
   constructor(props){
     super(props);
+    this.renderContainer = this.renderContainer.bind(this);
+  }
+
+  renderContainer(){
+    const { route } = this.props;
+    const matchArr = route.match(/^#\/books\/(\d+)$/);
+    console.log('route', route);
+    console.log('matchArr', matchArr);
+    if(matchArr){
+      return (<BookContainer id={matchArr[1]}/>);
+    }else{
+      return (<BooksContainer />);
+    }
   }
 
   render(){
-    const { books, activeTags, tags, tab, fetch, isComplete, dispatch, wizardTags } = this.props;
+    const { tab, wizardTags, dispatch } = this.props;
     return (
       <div className='page-wrapper'>
         <Wizard tags={wizardTags} dispatch={dispatch}/>
         <NavBar dispatch={dispatch} tab={tab}/>
-        <Content {...this.props}/>
+        {this.renderContainer()}
       </div>
     );
   }
 }
 
-function filterActiveTags(tags){
-  let activeTags = [];
-  for(let i = 0; i < tags.length; i++){
-    if(tags[i].isActive){
-      activeTags.push(tags[i].tag);
-    }
-  }
-  return activeTags;
-}
 function mapStateToProps(state){
-  const { tags, tab, books, fetch, wizard } = state;
-  const { total, items } = books;
-  const activeTags = filterActiveTags(tags);
+  const { route, tab, wizard } = state;
   return {
-    tags,
-    activeTags,
-    tab: activeTags.indexOf(tab.tag) === -1 ? activeTags[0] : tab.tag,
-    books: items,
-    fetch,
-    isComplete: total === items.length && total > 0,
-    wizardTags: wizard
+    tab: tab.tag,
+    wizardTags: wizard,
+    route
   };
-
 }
 export default connect(mapStateToProps)(App);

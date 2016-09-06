@@ -25,24 +25,26 @@ export default class Tags extends Component{
   render(){
     const { tags } = this.props;
     return(
-      <Card title="书签" bordered={true}>
-        <Input ref='newTag' onPressEnter={this.pressEnter} placeholder='输入书签，敲回车添加' onKeyDown={this.keyDown}/>
-        <div style={{ margin: '16px 0' }} />
-        {
-          tags.map((tag, index) =>{
-            if(tag.tag === TAG_GUESS){
-              return (<Tag key={index} onClick={(e) => this.click(e, index)}
-                        color={tag.isActive?'red':''}><Icon type="heart-o"/> {tag.tag} </Tag>);
-            }else if(tag.tag === TAG_SEARCH){
-              return (<Tag key={index} onClick={(e) => this.click(e, index)}
-                        color={tag.isActive?'red':''}><Icon type="search"/> {tag.tag} </Tag>);
-            }else{
-              return (<Tag closable key={index} onClick={(e) => this.click(e, index)}
-                  color={tag.isActive?'red':''}>{tag.tag} </Tag>);
-            }
-          })
-        }
-      </Card>
+      <div className='right-side'>
+        <Card title="书签">
+          <Input ref='newTag' onPressEnter={this.pressEnter} placeholder='输入书签，敲回车添加' onKeyDown={this.keyDown}/>
+          <div style={{ margin: '16px 0' }} />
+          {
+            tags.map((tag, index) =>{
+              if(tag.tag === TAG_GUESS){
+                return (<Tag key={index} onClick={(e) => this.click(e, index)}
+                          color={tag.isActive?'red':''}><Icon type="heart-o"/> {tag.tag} </Tag>);
+              }else if(tag.tag === TAG_SEARCH){
+                return (<Tag key={index} onClick={(e) => this.click(e, index)}
+                          color={tag.isActive?'red':''}><Icon type="search"/> {tag.tag} </Tag>);
+              }else{
+                return (<Tag closable key={index} onClick={(e) => this.click(e, index)}
+                    color={tag.isActive?'red':''}>{tag.tag} </Tag>);
+              }
+            })
+          }
+        </Card>
+      </div>
     );
   }
 }

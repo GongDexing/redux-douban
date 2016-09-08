@@ -73,10 +73,11 @@ class NewAnsweor extends Component{
         <Modal ref="modal"
           visible={this.state.visible}
           title="成为答主《马云内部讲话2》"
+          width='800px'
           onOk={this.handleOk} onCancel={this.handleCancel}
           footer={[
-            <Button key="back" type="ghost" size="large" onClick={this.handleCancel}>再想想</Button>,
-            <Button key="submit" type="primary" size="large" onClick={this.handleOk}>申请</Button>
+            <Button key="submit" type="primary" size="large" onClick={this.handleOk}>申请</Button>,
+            <Button key="back" type="ghost" size="large" onClick={this.handleCancel}>再想想</Button>
           ]}
         >
           <Form horizontal>

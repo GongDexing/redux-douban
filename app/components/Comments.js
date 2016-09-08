@@ -17,6 +17,10 @@ export default class Comments extends Component{
           <Comment />
           <Comment />
           <Comment />
+          <Comment />
+          <Comment />
+          <Comment />
+          <Comment />
         </Card>
       </div>
     );

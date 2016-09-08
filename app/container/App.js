@@ -7,6 +7,7 @@ import NavBar from '../components/NavBar';
 import Wizard from '../components/Wizard';
 import BooksContainer from './BooksContainer';
 import BookContainer from './BookContainer';
+import ProfileContainer from './ProfileContainer';
 
 class App extends Component{
   constructor(props){
@@ -16,11 +17,16 @@ class App extends Component{
 
   renderContainer(){
     const { route } = this.props;
-    const matchArr = route.match(/^#\/books\/(\d+)$/);
+    const matchArr = route.match(/^#\/([a-z]+)\/(\d+)$/);
     console.log('route', route);
     console.log('matchArr', matchArr);
     if(matchArr){
-      return (<BookContainer id={matchArr[1]}/>);
+      switch(matchArr[1]){
+        case 'books':
+          return (<BookContainer id={matchArr[2]}/>);
+        case 'users':
+          return (<ProfileContainer id={matchArr[2]}/>);
+      }
     }else{
       return (<BooksContainer />);
     }

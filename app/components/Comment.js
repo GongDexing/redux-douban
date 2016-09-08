@@ -1,7 +1,7 @@
 /*jshint esversion:6*/
 import '../less/Comment.less';
 import React, { Component } from 'react';
-import { Button } from 'antd';
+import { Button, Rate } from 'antd';
 
 export default class Comment extends Component{
   constructor(props){
@@ -16,8 +16,9 @@ export default class Comment extends Component{
             <li className='pull-left'>
               <img width='30px' src="../app/img/时间管理.jpg" />
             </li>
-            <li className='reader-name'>李四</li>
-            <li className='reply-time'>2016-05-05 17:05</li>
+            <li className='reader-name'>尼古拉斯.诸葛孔明</li>
+            <li className='reply-time'>两天前</li>
+            <li className='comment-rate'><Rate allowHalf={true}/></li>
             <li className='pull-right'>
               <Button size="small"><span>回复</span></Button>
             </li>

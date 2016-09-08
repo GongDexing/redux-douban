@@ -35,7 +35,7 @@ export default class Wizard extends Component{
   render(){
     const { tags } = this.props;
     return (
-      <Modal title='对哪些类别书籍感兴趣(最多选5个)' visible={this.state.visible} closable={false}
+      <Modal title='对哪些类别书籍感兴趣(最多选5个)' width='800px' visible={this.state.visible} closable={false}
         onOk={this.handleOk} okText='确定' cancelText='跳过'  onCancel={this.handleCancel}
       >
         {

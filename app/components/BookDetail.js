@@ -66,7 +66,7 @@ export default class BookDetail  extends Component{
                   <RadioButton value="c">读过</RadioButton>
                 </RadioGroup>
                 &nbsp;&nbsp;
-                您的评价：<Rate />
+                您的评价：<Rate allowHalf={true}/>
               </div>
             </div>
           </Col>

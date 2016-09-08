@@ -9,6 +9,8 @@ import Comments from '../components/Comments';
 import Spinner from '../components/Spinner';
 import NoResult from '../components/NoResult';
 import { fetchBook } from '../actions/book';
+import ChatBox from '../components/ChatBox';
+import ContactsBox from '../components/ContactsBox';
 class BookContainer extends Component{
   constructor(props){
     super(props);
@@ -31,16 +33,20 @@ class BookContainer extends Component{
       return (<NoResult />);
     }else{
       return (
-        <Row>
-          <Col span={16} offset={1}>
-            <BookDetail book={book}/>
-            <BookBrief text={book.catalog}/>
-          </Col>
-          <Col span={6}>
-            <UserList />
-            <Comments />
-          </Col>
-        </Row>
+        <div>
+          <Row>
+            <Col span={16} offset={1}>
+              <BookDetail book={book}/>
+              <BookBrief text={book.catalog}/>
+            </Col>
+            <Col span={6}>
+              <UserList />
+              <Comments />
+            </Col>
+          </Row>
+          <ChatBox />
+          <ContactsBox />
+        </div>
       );
     }
   }

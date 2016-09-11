@@ -1,5 +1,6 @@
 /*jshint esversion:6*/
 import React, { Component } from 'react';
+import BookComment from './BookComment';
 
 export default class BookComments extends Component{
   constructor(props){
@@ -8,7 +9,12 @@ export default class BookComments extends Component{
   render(){
     return (
       <div>
-        BookComments
+        <BookComment />
+        <BookComment />
+        <BookComment />
+        <BookComment />
+        <BookComment />
+        <BookComment />
       </div>
     );
   }

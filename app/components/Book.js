@@ -10,10 +10,11 @@ export default class Books extends Component{
     }
     render(){
       const { book, click } = this.props;
+      console.log('book', book);
       const url = `#/books/${book.id}`;
       return (
-        <Col span="4">
-          <Card bodyStyle={{ padding: '0px'}}>
+        <Col md={{span:4}} sm={{span: 8}} xs={{span:12}}>
+          <Card bodyStyle={{ padding: '0px', height: '240px'}}>
             <div>
               <a href={url} onClick={() => click(url)}>
                 <img width="100%" height='240px' src={book.images.large}/>

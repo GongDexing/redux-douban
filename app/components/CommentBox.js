@@ -13,9 +13,6 @@ export default class CommentBox extends Component{
       <div className='comment-box'>
         <div className='clearfix'>
           <ul>
-            <li className='pull-left'>
-              <img width='30px' src="../app/img/时间管理.jpg" />
-            </li>
             <li className='reader-name'>尼古拉斯.诸葛孔明</li>
             <li className='comment-rate'><Rate allowHalf={true}/></li>
             <li className='pull-right'>

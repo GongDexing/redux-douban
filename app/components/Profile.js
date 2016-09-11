@@ -14,10 +14,10 @@ export default class Profile extends Component{
         <Col span={4} offset={1}>
           <ProfileInfo />
         </Col>
-        <Col span={12}>
+        <Col span={11}>
           <ProfileData />
         </Col>
-        <Col span={6}>
+        <Col span={7}>
           <ProfileState />
         </Col>
       </Row>

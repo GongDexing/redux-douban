@@ -19,7 +19,7 @@ export default class Books extends Component{
   render(){
     const { fetch, books } = this.props;
     return(
-        <div>
+        <div className='books'>
           <Row>
             {books.map((book, index) => <Book  key={index} book={book} click={this.click}/>)}
             <Spinner status={fetch}/>

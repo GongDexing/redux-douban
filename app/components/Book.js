@@ -11,7 +11,7 @@ export default class Books extends Component{
     render(){
       const { book, click } = this.props;
       console.log('book', book);
-      const url = `#/books/${book.id}`;
+      const url = `/books/${book.id}`;
       return (
         <Col md={{span:4}} sm={{span: 8}} xs={{span:12}}>
           <Card bodyStyle={{ padding: '0px', height: '240px'}}>

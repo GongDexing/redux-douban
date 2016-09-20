@@ -9,6 +9,9 @@ import BooksContainer from './BooksContainer';
 import BookContainer from './BookContainer';
 import ProfileContainer from './ProfileContainer';
 
+import { Router, Route, Link, browserHistory } from 'react-router';
+import routes from './routes';
+
 class App extends Component{
   constructor(props){
     super(props);
@@ -38,7 +41,9 @@ class App extends Component{
       <div className='page-wrapper'>
         <Wizard tags={wizardTags} dispatch={dispatch}/>
         <NavBar dispatch={dispatch} tab={tab}/>
-        {this.renderContainer()}
+        <Router history={browserHistory}>
+          {routes}
+        </Router>
       </div>
     );
   }

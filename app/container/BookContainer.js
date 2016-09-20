@@ -16,7 +16,9 @@ class BookContainer extends Component{
     super(props);
   }
   componentDidMount(){
-    const { dispatch, id } = this.props;
+    const { dispatch } = this.props;
+    const { id } = this.props.params;
+    console.log('params:', this.props.params);
     dispatch(fetchBook(id));
   }
   componentWillReceiveProps(nextProps){
